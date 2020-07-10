@@ -90,4 +90,19 @@ public class SinglyLinkedList<T> {
             size++;
         }
     }
+    
+    public boolean searchNode(T data) {
+        // Write -- Your -- Code
+        if(this.headNode == null){
+            return false;
+        }
+        Node currentNode = headNode;
+        while(currentNode != null){
+            if(currentNode.data.equals(data)){
+                return true;
+            }
+            currentNode = currentNode.nextNode;
+        }        
+        return false; //value not found
+    }
 }
