@@ -125,4 +125,16 @@ public class SinglyLinkedList<T> {
         aheadNode = aheadNode.nextNode;
       }    
     }
+    
+    public int length() {
+      int count = 0;
+      if(this.headNode == null)
+        return count;
+      Node currentNode = this.headNode;
+      while(currentNode != null){
+        currentNode = currentNode.nextNode;
+        count++;
+      }
+      return count;
+    }
 }
