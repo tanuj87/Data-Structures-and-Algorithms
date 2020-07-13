@@ -105,4 +105,24 @@ public class SinglyLinkedList<T> {
         }        
         return false; //value not found
     }
+    
+     public void deleteByValue(T data) {
+      if(headNode == null){
+        return;
+      }
+      if(headNode.data.equals(data)){
+        headNode = headNode.nextNode;
+        return;
+      }
+      Node currentNode = headNode;
+      Node aheadNode = currentNode.nextNode;
+      while(aheadNode != null){
+        if(aheadNode.data.equals(data)){
+          currentNode.nextNode = aheadNode.nextNode;
+          return;
+        }
+        currentNode = currentNode.nextNode;
+        aheadNode = aheadNode.nextNode;
+      }    
+    }
 }
